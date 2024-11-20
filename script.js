@@ -22,3 +22,30 @@ input_field.addEventListener('input', () => {
 slide_control.addEventListener('click', () => {
     link_box.classList.toggle('slide');
 });
+
+
+// Select all the .grid_item elements within .panigation
+const targetDivs = document.querySelectorAll('.panigation .grid_item');
+
+// Callback function for when elements intersect
+const onIntersect = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log('Div is visible!');
+      // Perform your action here
+      entry.target.classList.add('slideup');
+    } else {
+      console.log('Div is out of view');
+      // Reset the action if needed
+      entry.target.classList.remove('slideup');
+    }
+  });
+};
+
+// Create an IntersectionObserver instance
+const observer = new IntersectionObserver(onIntersect, {
+  threshold: 0.5, // Trigger when 50% of the element is visible
+});
+
+// Observe each target element
+targetDivs.forEach(targetDiv => observer.observe(targetDiv));
