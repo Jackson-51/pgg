@@ -204,12 +204,30 @@ section.one{
 section.one > *{
     border-radius: 20px;
     width: 50%;
-    height:35em;
+    height:40em;
     @media (max-width:900px) {
         width: 100%;
+        height: 35em;
     }
 }
- 
+section.one .number_one{
+    overflow: hidden;
+    border:1px solid #c9c9c9;
+    scroll-behavior: smooth;
+}
+
+.number_one .first_container{
+    width:200%;
+    height:inherit;
+    display:flex;
+}
+
+.first_container > *{
+    width:100%;
+    height: inherit;
+    position: relative;
+}
+
 section.one .first{
     display:flex;
     flex-direction:column;
@@ -217,12 +235,66 @@ section.one .first{
     grid-gap: 20px;
     padding:20px;
     background-color:#f5f5f5;
-    border:1px solid #c9c9c9;
     @media (max-width:900px) {
         padding:10px;
     }
 }
 
+.first_container .first_2{
+    background-color: #f5f5f5;
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    @media (max-width:900px) {
+        padding:10px;
+    }
+}
+.first_2 h2{
+    text-align: center;
+    color:#414141;
+}
+.first_2 label{
+    color:#414141;
+    margin-top:20px;
+    font-weight:bolder;
+}
+.first_2 input, textarea{
+    margin-top: 5px;
+    border:1px solid #c9c9c9;
+}
+.first_2 input{
+    padding:13px;
+    border-radius: 10px;
+    outline: none;
+    color: #414141;
+}
+.first_2 textarea{
+    height:40%;
+    padding:20px;
+    border-radius: 10px;
+    outline: none;
+    color: #414141;
+}
+.first_2 button{
+    padding:15px 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    background-color: #6654F1;
+    border:none;
+    color:#fff;
+    width:30%;
+    align-self:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    grid-gap:10px;
+}
+.first_2 button:active{
+    background-color: #6654f1d3;
+}
+.first_2 > *{
+    width:100%;
+}
 section.one .first > *{
     width:100%;
 }
@@ -460,8 +532,8 @@ section.one .first > *{
 }
 
 .grid_item:nth-child(4){
-    grid-column:1/10;
-    grid-row:3/5;
+    grid-column:1/5;
+    grid-row:3/6;
     @media (max-width:900px) {
         grid-column:1/4;
         grid-row:5/7;
@@ -469,7 +541,7 @@ section.one .first > *{
 }
 
 .grid_item:nth-child(5){
-    grid-column:3/7;
+    grid-column:5/7;
     grid-row:3/6;
     @media (max-width:900px) {
         grid-column:4/10;
